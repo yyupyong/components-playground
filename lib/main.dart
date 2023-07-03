@@ -17,17 +17,7 @@ class MainApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
           child: Center(
-            child: GridView.builder(
-              itemCount: 100,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 50,
-                mainAxisSpacing: 30,
-              ),
-              itemBuilder: (context, index) {
-                return const GridContainer();
-              },
-            ),
+            child: createGridView(),
           ),
         ),
       ),
