@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grid_sample/tuturial_screen.dart';
 
 import 'grid_view.dart';
 
@@ -17,7 +18,7 @@ class MainApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
           child: Center(
-            child: createGridView(),
+            child: TutorialScreen(),
           ),
         ),
       ),

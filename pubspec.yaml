@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  tutorial_coach_mark: ^1.2.9
 
 dev_dependencies:
   flutter_test:
