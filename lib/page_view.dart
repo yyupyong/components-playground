@@ -22,6 +22,10 @@ class _PageViewcreaterState extends State<PageViewcreater> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+        onPageChanged: (int index) {
+          //ここでpageが切り替わった際の処理を呼び出せる
+          print(index);
+        },
         //ここで生成されるアイテムはControllerによって管理されるのでgridViewから渡ってきたindexのアイテムが生成される
         controller: _pageController,
         itemBuilder: (context, index) {
