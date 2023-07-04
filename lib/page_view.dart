@@ -37,7 +37,14 @@ class _PageViewcreaterState extends State<PageViewcreater> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text("Back"))
+                      child: Text("Back")),
+                  ElevatedButton(
+                      onPressed: () {
+                        _pageController.nextPage(
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeInOut);
+                      },
+                      child: Text("Next"))
                 ],
               ),
             ),
