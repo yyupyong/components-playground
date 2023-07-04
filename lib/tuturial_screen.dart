@@ -1,3 +1,4 @@
+import 'package:feature_discovery/feature_discovery.dart';
 import 'package:flutter/material.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
@@ -64,17 +65,14 @@ class _TutorialScreenState extends State<TutorialScreen> {
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  "メールアドレスを入力してください",
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),
-                ),
+                ElevatedButton(onPressed: () {}, child: Text("OK")),
               ],
             ),
-          )
+          ),
         ],
         shape: ShapeLightFocus.RRect,
         radius: 5,
@@ -89,7 +87,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
             align: ContentAlign.bottom,
             child: const Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
                   "名前を入力してください",

@@ -7,6 +7,7 @@ environment:
   sdk: '>=3.0.1 <4.0.0'
 
 dependencies:
+  feature_discovery: ^0.14.1
   flutter:
     sdk: flutter
   tutorial_coach_mark: ^1.2.9
