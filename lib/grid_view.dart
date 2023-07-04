@@ -26,8 +26,12 @@ GridView createGridView() {
     itemBuilder: (context, index) {
       return GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => PageViewcreater()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PageViewcreater(
+                          index: index,
+                        )));
           },
           child: const GridContainer());
     },
