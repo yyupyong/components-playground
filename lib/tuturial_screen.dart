@@ -107,7 +107,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
 
   void showTutorial() {
     tutorialCoachMark = TutorialCoachMark(
-        targets: targets, paddingFocus: 10, opacityShadow: 0.8)
+        targets: targets, paddingFocus: 10, textSkip: "", opacityShadow: 0.8)
       ..show(context: context);
   }
 }
