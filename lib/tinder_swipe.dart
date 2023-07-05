@@ -1,22 +1,62 @@
-import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:swipe_cards/swipe_cards.dart';
 
-import 'grid_view.dart';
+class TiderSwipe extends StatefulWidget {
+  const TiderSwipe({Key? key}) : super(key: key);
 
-class TiderSwipe extends StatelessWidget {
-  const TiderSwipe({super.key});
+  @override
+  _TiderSwipeState createState() => _TiderSwipeState();
+}
+
+class _TiderSwipeState extends State<TiderSwipe> {
+  Future<List<String>> fetchImages() async {
+    // Dummy data
+    return Future.delayed(
+      Duration(seconds: 2),
+      () => [
+        'https://via.placeholder.com/350',
+        'https://via.placeholder.com/350',
+        'https://via.placeholder.com/350',
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Swiper(
-          itemBuilder: (context, index) {
-            return GridContainer();
-          },
-          itemCount: 3,
-          pagination: SwiperPagination(),
-          control: SwiperControl()),
+    return FutureBuilder<List<String>>(
+      future: fetchImages(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          List<SwipeItem> swipeItems = snapshot.data!.map((url) {
+            return SwipeItem(
+              content: Image.network(url, fit: BoxFit.cover),
+              likeAction: () {
+                print("Image Liked");
+              },
+              nopeAction: () {
+                print("Image Noped");
+              },
+            );
+          }).toList();
+
+          MatchEngine matchEngine = MatchEngine(swipeItems: swipeItems);
+
+          return Scaffold(
+            body: SwipeCards(
+              matchEngine: matchEngine,
+              itemBuilder: (context, index) {
+                return swipeItems[index].content;
+              },
+              onStackFinished: () {},
+            ),
+          );
+        } else if (snapshot.hasError) {
+          return Text("${snapshot.error}");
+        }
+
+        // By default, show a loading spinner.
+        return CircularProgressIndicator();
+      },
     );
   }
 }
