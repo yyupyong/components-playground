@@ -8,7 +8,6 @@ environment:
 
 dependencies:
   card_swiper: ^2.0.4
-  feature_discovery: ^0.14.1
   flutter:
     sdk: flutter
   tutorial_coach_mark: ^1.2.9
