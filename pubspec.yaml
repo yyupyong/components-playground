@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   tutorial_coach_mark: ^1.2.9
-
+  swipe_cards: ^2.0.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
