@@ -15,7 +15,7 @@ class DetailsScreen extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  context.pop();
+                  context.go("/");
                 },
                 child: Text("")),
             Center(child: Text("DetailsScreen")),

@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  context.push("/details");
+                  context.go("/details");
                 },
                 child: Text("")),
             Center(child: Text("HomeScreen")),
