@@ -6,35 +6,46 @@ class GridContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 164.5,
-      height: 274,
-      decoration: BoxDecoration(
-          color: Colors.red, borderRadius: BorderRadius.circular(20)),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 164.5,
+          height: 228,
+          decoration: BoxDecoration(
+              color: Colors.red, borderRadius: BorderRadius.circular(10)),
+        ),
+        SizedBox(height: 5),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [Text('24歳 東京都'), SizedBox(height: 5), Text('自己紹介')],
+        )
+      ],
     );
   }
 }
 
-GridView createGridView() {
-  return GridView.builder(
-    itemCount: 10,
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      childAspectRatio: 164.5 / 274,
-      crossAxisCount: 2,
-      crossAxisSpacing: 20,
-      mainAxisSpacing: 26,
+Widget createGridView() {
+  return Padding(
+    padding: EdgeInsets.symmetric(horizontal: 12),
+    child: GridView.builder(
+      itemCount: 10,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        childAspectRatio: 164.5 / 274,
+        crossAxisCount: 2,
+      ),
+      itemBuilder: (context, index) {
+        return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PageViewcreater(
+                            index: index,
+                          )));
+            },
+            child: const GridContainer());
+      },
     ),
-    itemBuilder: (context, index) {
-      return GestureDetector(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => PageViewcreater(
-                          index: index,
-                        )));
-          },
-          child: const GridContainer());
-    },
   );
 }
