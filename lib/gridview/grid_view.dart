@@ -7,8 +7,8 @@ class GridContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
-      height: 50,
+      width: 164.5,
+      height: 274,
       decoration: BoxDecoration(
           color: Colors.red, borderRadius: BorderRadius.circular(20)),
     );
@@ -17,11 +17,12 @@ class GridContainer extends StatelessWidget {
 
 GridView createGridView() {
   return GridView.builder(
-    itemCount: 100,
+    itemCount: 10,
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      childAspectRatio: 164.5 / 274,
       crossAxisCount: 2,
-      crossAxisSpacing: 50,
-      mainAxisSpacing: 30,
+      crossAxisSpacing: 20,
+      mainAxisSpacing: 26,
     ),
     itemBuilder: (context, index) {
       return GestureDetector(
