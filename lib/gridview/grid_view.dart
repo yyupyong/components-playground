@@ -8,7 +8,7 @@ class GridContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size.width;
     final itemWidth = size / 2 - 30;
-    final itemHeight = itemWidth * 1.8;
+    final itemHeight = itemWidth * 1.3;
     return Column(
       children: [
         Container(
@@ -36,11 +36,17 @@ class GridV extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width;
+    final itemWidth = size / 2 - 30;
+    final itemHeight = itemWidth * 1.6;
     return GridView.builder(
       padding: const EdgeInsets.all(15),
       itemCount: 10,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 10, mainAxisSpacing: 15, crossAxisCount: 2),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: itemWidth / itemHeight,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 15,
+          crossAxisCount: 2),
       itemBuilder: (context, index) => GridContainer(),
     );
   }
