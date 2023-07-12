@@ -6,16 +6,19 @@ class GridContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width;
+    final itemWidth = size / 2 - 30;
+    final itemHeight = itemWidth * 1.8;
     return Column(
       children: [
         Container(
-          width: 180.5,
-          height: 250,
+          width: itemWidth,
+          height: itemHeight,
           decoration: BoxDecoration(
               color: Colors.red, borderRadius: BorderRadius.circular(10)),
         ),
         const SizedBox(height: 15),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Column(
