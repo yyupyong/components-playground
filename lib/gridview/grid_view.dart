@@ -31,23 +31,17 @@ class GridContainer extends StatelessWidget {
   }
 }
 
-Widget createGridView() {
-  return GridView.builder(
-    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-    itemCount: 10,
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 0.6, crossAxisCount: 2, mainAxisSpacing: 10),
-    itemBuilder: (context, index) {
-      return GestureDetector(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => PageViewcreater(
-                          index: index,
-                        )));
-          },
-          child: const GridContainer());
-    },
-  );
+class GridV extends StatelessWidget {
+  const GridV({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      padding: const EdgeInsets.all(15),
+      itemCount: 10,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisSpacing: 10, mainAxisSpacing: 15, crossAxisCount: 2),
+      itemBuilder: (context, index) => GridContainer(),
+    );
+  }
 }
