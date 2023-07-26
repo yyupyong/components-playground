@@ -30,12 +30,8 @@ class _TiderSwipeState extends State<TiderSwipe> {
           List<SwipeItem> swipeItems = snapshot.data!.map((url) {
             return SwipeItem(
               content: Image.network(url, fit: BoxFit.cover),
-              likeAction: () {
-                print("Image Liked");
-              },
-              nopeAction: () {
-                print("Image Noped");
-              },
+              likeAction: () {},
+              nopeAction: () {},
             );
           }).toList();
 
