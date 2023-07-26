@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:grid_sample/gridview/grid_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,8 +6,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: GridV(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: Colors.amber,
+                child: Text('ssss'),
+              ),
+            ),
+            Container(
+              height: 100,
+              color: Colors.white,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
