@@ -14,7 +14,8 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: "/details",
       pageBuilder: (context, state) {
-        return MaterialPage(fullscreenDialog: true, child: DetailsScreen());
+        return const MaterialPage(
+            fullscreenDialog: true, child: DetailsScreen());
       },
     )
   ],
